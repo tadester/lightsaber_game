@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jedi Combat Simulator</title>
+    <meta
+      name="description"
+      content="A modern browser prototype for a webcam-powered AR Jedi combat simulator with MediaPipe hand tracking, saber collisions, and force push heuristics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <p class="eyebrow">Browser Prototype</p>
+            <h1>Jedi Combat Simulator</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="start-button" class="button button-primary">Start Camera</button>
+          <a class="button button-secondary" href="#blueprint">System Blueprint</a>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="experience panel">
+          <div class="experience-header">
+            <div>
+              <p class="eyebrow">Live Arena</p>
+              <h2>Deflect drones. Charge a push. Feel the glow.</h2>
+            </div>
+
+            <div class="status-cluster">
+              <span id="runtime-badge" class="status-badge">Booting</span>
+              <span id="tracking-badge" class="status-badge status-badge-muted">Tracking Offline</span>
+            </div>
+          </div>
+
+          <div class="arena-frame">
+            <video id="camera" autoplay playsinline muted></video>
+            <canvas id="arena-canvas"></canvas>
+
+            <div class="reticle reticle-a"></div>
+            <div class="reticle reticle-b"></div>
+
+            <div class="overlay top-left">
+              <span class="overlay-label">Status</span>
+              <strong id="hero-status">Waiting for camera access</strong>
+            </div>
+
+            <div class="overlay top-right">
+              <span class="overlay-label">Gesture</span>
+              <strong id="force-status">Idle</strong>
+            </div>
+
+            <div class="overlay bottom-left">
+              <span class="overlay-label">Saber Hand</span>
+              <strong id="saber-status">Searching</strong>
+            </div>
+
+            <div class="overlay bottom-right">
+              <span class="overlay-label">Telemetry</span>
+              <strong id="fps-status">0 FPS</strong>
+            </div>
+          </div>
+
+          <div class="control-grid">
+            <article class="control-card">
+              <span class="control-label">Score</span>
+              <strong id="score-value">0</strong>
+              <p>Each saber deflect or strong push converts raw geometry into a visible game event.</p>
+            </article>
+            <article class="control-card">
+              <span class="control-label">Combo</span>
+              <strong id="combo-value">x1</strong>
+              <p>Chain clean deflects and pushes quickly to build multiplier pressure and faster scoring.</p>
+            </article>
+            <article class="control-card">
+              <span class="control-label">Threat Level</span>
+              <strong id="level-value">1</strong>
+              <p>The arena ramps up automatically with faster drones, shorter respawns, and denser pressure.</p>
+            </article>
+            <article class="control-card">
+              <span class="control-label">Active Drones</span>
+              <strong id="drone-count">0</strong>
+              <p>Spheres spawn from the edge and pressure the player toward the center of the frame.</p>
+            </article>
+            <article class="control-card">
+              <span class="control-label">Push Cooldown</span>
+              <strong id="cooldown-value">Ready</strong>
+              <p>Bounding-box growth and palm depth work together to keep push detection stable.</p>
+            </article>
+            <article class="control-card">
+              <span class="control-label">Audio</span>
+              <strong id="audio-value">Armed</strong>
+              <p>Procedural synth cues reinforce saber locks, deflects, force bursts, and rising danger.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel sidebar-panel">
+            <p class="eyebrow">Controls</p>
+            <h3>How to play</h3>
+            <ul class="detail-list">
+              <li>Use your right-side hand in frame to aim the saber.</li>
+              <li>Point your index finger to steer the blade direction.</li>
+              <li>Use your left-side hand to thrust forward for a Force Push.</li>
+              <li>Stand a little back from the camera so both hands stay visible.</li>
+            </ul>
+          </section>
+
+          <section class="panel sidebar-panel">
+            <p class="eyebrow">Heuristics</p>
+            <h3>Zero-data rules</h3>
+            <div class="mini-stat">
+              <span>Blade anchor</span>
+              <strong>Wrist + index base blend</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Blade direction</span>
+              <strong>Anchor to index tip vector</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Push trigger</span>
+              <strong>Area delta + palm z velocity</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Collision math</span>
+              <strong>Line-to-sphere distance test</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Hand role memory</span>
+              <strong>Position + handedness + temporal stickiness</strong>
+            </div>
+          </section>
+
+          <section class="panel sidebar-panel">
+            <p class="eyebrow">Build Notes</p>
+            <h3>Why this stack</h3>
+            <p class="sidebar-copy">
+              This prototype keeps everything in the browser so we can ship the
+              complete interaction loop now. Later, the same heuristics can move
+              into Rust or a game engine without changing the gameplay model.
+            </p>
+          </section>
+
+          <section class="panel sidebar-panel">
+            <p class="eyebrow">Systems</p>
+            <h3>What got added</h3>
+            <div class="mini-stat">
+              <span>Difficulty</span>
+              <strong>Adaptive spawn speed and pressure</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Scoring</span>
+              <strong>Combo timer plus multiplier scaling</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Audio</span>
+              <strong>Browser synth cues with no asset pack</strong>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <section id="blueprint" class="blueprint panel">
+        <div class="section-heading">
+          <p class="eyebrow">System Blueprint</p>
+          <h3>Capture, interpret, react, render</h3>
+          <p>
+            The prototype now runs the whole loop in one place: webcam feed,
+            MediaPipe landmarks, heuristic gesture logic, collision tests, and
+            game feedback in a single live browser canvas.
+          </p>
+        </div>
+
+        <div class="blueprint-grid">
+          <article class="info-card">
+            <span class="card-index">01</span>
+            <h4>Camera Input</h4>
+            <p>Requests webcam access and mirrors the feed into the arena so the interaction feels natural.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-index">02</span>
+            <h4>MediaPipe Hands</h4>
+            <p>Tracks up to two hands and returns the landmark coordinates that drive the whole simulation.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-index">03</span>
+            <h4>Heuristic Engine</h4>
+            <p>Calculates saber vectors, push deltas, cooldowns, and state labels with no training dataset.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-index">04</span>
+            <h4>Gameplay Layer</h4>
+            <p>Spawns drones, tests collisions, applies impulses, and paints particles and bloom-style glow.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
