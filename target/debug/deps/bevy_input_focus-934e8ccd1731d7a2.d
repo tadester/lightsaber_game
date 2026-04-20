@@ -1,0 +1,9 @@
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/bevy_input_focus-934e8ccd1731d7a2.d: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/directional_navigation.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/navigator.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/tab_navigation.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/autofocus.rs
+
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/libbevy_input_focus-934e8ccd1731d7a2.rmeta: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/directional_navigation.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/navigator.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/tab_navigation.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/autofocus.rs
+
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/lib.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/directional_navigation.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/navigator.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/tab_navigation.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_input_focus-0.18.1/src/autofocus.rs:

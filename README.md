@@ -1,43 +1,84 @@
 # Lightsaber Game
 
-A working browser prototype for a webcam-powered AR Jedi combat simulator.
+This repo is now oriented around a Rust + Python architecture:
 
-## What It Does
+- Rust owns the shared combat engine, mode rules, and runtime loop
+- Python owns MediaPipe hand tracking and emits clean gameplay actions
+- Bevy renders the current playable 2D MVP window
+- the browser prototype is still available for visual experimentation
 
-- Uses your webcam as the live scene background
-- Runs MediaPipe hand tracking directly in the browser
-- Builds a lightsaber from hand landmarks with heuristic math
-- Detects a Force Push from left-hand forward motion using area growth and palm depth
-- Spawns drones, checks saber collisions, applies push impulses, and renders particles
-- Scales difficulty over time with faster drones and shorter respawn windows
-- Tracks combo chains and score multipliers
-- Uses procedural browser audio for saber hits, force bursts, and warning cues
-- Keeps hand roles steadier with position, handedness, and temporal role memory
-- Presents the whole system in a modern sci-fi UI
+## Rust foundation
 
-## Run It
+The Rust side is split so solo, fitness, and multiplayer share one command and combat model from day one.
 
-This project should be served from a local web server so camera access and ES module imports work correctly.
+Key files:
+
+- [`Cargo.toml`](/Users/ktr/Documents/GitHub/lightsaber_game/Cargo.toml)
+- [`Docs/RUST_PYTHON_PLAN.md`](/Users/ktr/Documents/GitHub/lightsaber_game/Docs/RUST_PYTHON_PLAN.md)
+- [`crates/lightsaber_core/src/lib.rs`](/Users/ktr/Documents/GitHub/lightsaber_game/crates/lightsaber_core/src/lib.rs)
+- [`crates/lightsaber_core/src/simulation.rs`](/Users/ktr/Documents/GitHub/lightsaber_game/crates/lightsaber_core/src/simulation.rs)
+- [`crates/lightsaber_runtime/src/udp_bridge.rs`](/Users/ktr/Documents/GitHub/lightsaber_game/crates/lightsaber_runtime/src/udp_bridge.rs)
+- [`crates/lightsaber_app/src/main.rs`](/Users/ktr/Documents/GitHub/lightsaber_game/crates/lightsaber_app/src/main.rs)
+
+## Python gesture bridge
+
+The camera service is here:
+
+- [`Tools/gesture_bridge/mediapipe_bridge.py`](/Users/ktr/Documents/GitHub/lightsaber_game/Tools/gesture_bridge/mediapipe_bridge.py)
+- [`Tools/gesture_bridge/README.md`](/Users/ktr/Documents/GitHub/lightsaber_game/Tools/gesture_bridge/README.md)
+
+It detects gestures and sends final commands like `slash_left`, `slash_right`, `force_push`, and `guard_start` over UDP to the Rust runtime.
+
+## Run the Rust app
 
 ```bash
-python3 -m http.server 8000
+cargo run -p lightsaber_app
 ```
 
-Then open:
+Modes:
 
-`http://localhost:8000`
+- `cargo run -p lightsaber_app`
+- `cargo run -p lightsaber_app -- fitness`
+- `cargo run -p lightsaber_app -- duel`
 
-## Controls
+Player 1 keyboard controls:
 
-- Click `Start Camera`
-- Keep your right-side hand in frame to drive the saber
-- Point with your index finger to angle the blade
-- Use your left-side hand and thrust it forward to trigger a Force Push
-- Chain hits quickly to build combo multiplier and higher scores
+- `A` or `slash_left`
+- `D` or `slash_right`
+- `W` or `force_push`
+- `S` or `guard_start`
+- `guard_end`
 
-## Notes
+Player 2 duel controls:
 
-- The hand tracking runtime is loaded from the MediaPipe CDN in the browser
-- A stable webcam distance helps the push heuristic behave more consistently
-- Browser audio starts after user interaction when you click `Start Camera`
-- The browser version is the fastest path to a complete demo; the same logic can later move into Rust, Bevy, Godot, or a websocket-based architecture
+- `J` slash left
+- `L` slash right
+- `I` force push
+- `K` guard
+
+What you get now:
+
+- windowed 2D arena
+- parallax background
+- solo drone combat
+- fitness HUD metrics
+- local 1v1 duel rules
+- UDP camera-command intake from Python
+
+## Run the Python bridge
+
+```bash
+cd Tools/gesture_bridge
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python mediapipe_bridge.py
+```
+
+## Browser prototype
+
+The browser prototype is still here if we want to keep iterating visually:
+
+- [`index.html`](/Users/ktr/Documents/GitHub/lightsaber_game/index.html)
+- [`styles.css`](/Users/ktr/Documents/GitHub/lightsaber_game/styles.css)
+- [`app.js`](/Users/ktr/Documents/GitHub/lightsaber_game/app.js)

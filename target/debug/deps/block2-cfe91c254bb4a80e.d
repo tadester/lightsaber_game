@@ -1,0 +1,13 @@
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/block2-cfe91c254bb4a80e.d: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/abi.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/block.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/debug.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/ffi.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/global.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/rc_block.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/stack.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/traits.rs
+
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/libblock2-cfe91c254bb4a80e.rmeta: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/abi.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/block.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/debug.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/ffi.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/global.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/rc_block.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/stack.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/traits.rs
+
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/lib.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/abi.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/block.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/debug.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/ffi.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/global.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/rc_block.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/stack.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/block2-0.5.1/src/traits.rs:

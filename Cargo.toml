@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "crates/lightsaber_core",
+    "crates/lightsaber_runtime",
+    "crates/lightsaber_app",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+license = "MIT"
+version = "0.1.0"

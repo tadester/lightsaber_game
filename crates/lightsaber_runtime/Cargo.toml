@@ -1,0 +1,11 @@
+[package]
+name = "lightsaber_runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+lightsaber_core = { path = "../lightsaber_core" }
+
+[lib]
+path = "src/lib.rs"

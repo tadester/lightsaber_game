@@ -1,0 +1,9 @@
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/bevy_gizmos_render-8cbd89fd6245c67c.d: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/retained.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/pipeline_2d.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lines.wgsl /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/line_joints.wgsl
+
+/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/libbevy_gizmos_render-8cbd89fd6245c67c.rmeta: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/retained.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/pipeline_2d.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lines.wgsl /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/line_joints.wgsl
+
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lib.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/retained.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/pipeline_2d.rs:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/lines.wgsl:
+/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_gizmos_render-0.18.1/src/line_joints.wgsl:
