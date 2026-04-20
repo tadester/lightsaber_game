@@ -1,0 +1,4 @@
+target/
+Tools/gesture_bridge/.venv/
+Tools/gesture_bridge/__pycache__/
+*.pyc

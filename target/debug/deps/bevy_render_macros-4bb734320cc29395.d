@@ -1,9 +1,0 @@
-/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/bevy_render_macros-4bb734320cc29395.d: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/as_bind_group.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_component.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_resource.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/specializer.rs
-
-/Users/ktr/Documents/GitHub/lightsaber_game/target/debug/deps/libbevy_render_macros-4bb734320cc29395.dylib: /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/lib.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/as_bind_group.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_component.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_resource.rs /Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/specializer.rs
-
-/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/lib.rs:
-/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/as_bind_group.rs:
-/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_component.rs:
-/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/extract_resource.rs:
-/Users/ktr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render_macros-0.18.1/src/specializer.rs:
