@@ -22,7 +22,9 @@ class GestureBridge:
             min_tracking_confidence=0.5,
         )
         self.area_history = deque(maxlen=6)
+        self.y_history = deque(maxlen=5)
         self.guard_active = False
+        self.last_jump_at = 0.0
 
     def send(self, gesture: str, confidence: float, player_id: int = 0) -> None:
         payload = {
@@ -54,9 +56,18 @@ class GestureBridge:
         wrist = landmarks.landmark[0]
         tip = landmarks.landmark[8]
         pinky = landmarks.landmark[20]
+        self.y_history.append(wrist.y)
 
         horizontal_swing = tip.x - pinky.x
         guard_height = abs(tip.y - wrist.y)
+        now = time.time()
+
+        if len(self.y_history) == self.y_history.maxlen:
+            upward_motion = self.y_history[0] - self.y_history[-1]
+            if upward_motion > 0.075 and now - self.last_jump_at > 0.7:
+                self.send("jump", 0.84)
+                self.last_jump_at = now
+                return
 
         if area_delta > 0.03 and z_delta > 0.08:
             self.send("force_push", 0.93)

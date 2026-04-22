@@ -5,7 +5,7 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
-bevy = { version = "0.18.1", default-features = false, features = ["2d", "ui", "x11", "wayland"] }
+bevy = { version = "0.18.1", default-features = false, features = ["2d", "ui", "x11", "wayland", "default_font"] }
 lightsaber_core = { path = "../lightsaber_core" }
 lightsaber_runtime = { path = "../lightsaber_runtime" }
 

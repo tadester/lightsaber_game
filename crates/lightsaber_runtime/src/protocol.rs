@@ -10,6 +10,7 @@ pub fn parse_action_command_json(payload: &str) -> Option<ActionCommand> {
         "slash_left" => PlayerAction::AttackLeft,
         "slash_right" => PlayerAction::AttackRight,
         "force_push" => PlayerAction::ForcePush,
+        "jump" => PlayerAction::Jump,
         "guard_start" => PlayerAction::GuardStart,
         "guard_end" => PlayerAction::GuardEnd,
         _ => PlayerAction::None,

@@ -4,6 +4,7 @@ pub enum PlayerAction {
     AttackLeft,
     AttackRight,
     ForcePush,
+    Jump,
     GuardStart,
     GuardEnd,
 }

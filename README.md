@@ -35,13 +35,14 @@ It detects gestures and sends final commands like `slash_left`, `slash_right`, `
 cargo run -p lightsaber_app
 ```
 
-Modes:
+The app now opens to a main menu where you choose:
 
-- `cargo run -p lightsaber_app`
-- `cargo run -p lightsaber_app -- fitness`
-- `cargo run -p lightsaber_app -- duel`
+- input source: `Keyboard Only`, `Python Camera`, or `Keyboard + Python`
+- game mode: `Solo Combat`, `Fitness Mode`, or `Duel Mode`
 
-Player 1 keyboard controls:
+Then click `Start Mission`.
+
+Player 1 keyboard controls in gameplay:
 
 - `A` or `slash_left`
 - `D` or `slash_right`
@@ -58,6 +59,7 @@ Player 2 duel controls:
 
 What you get now:
 
+- main menu for input + mode selection
 - windowed 2D arena
 - parallax background
 - solo drone combat

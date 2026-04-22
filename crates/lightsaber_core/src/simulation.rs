@@ -198,6 +198,19 @@ impl GameState {
                     self.resolve_force_push(player_id, &mut result);
                 }
             }
+            PlayerAction::Jump => {
+                result.events.push(CombatEvent::PlayerActionAccepted {
+                    player_id: self.players[player_index].id,
+                    action: command.action,
+                });
+                if let Some(fitness) = &mut self.fitness {
+                    fitness.estimated_effort_score += 0.8;
+                    result.events.push(CombatEvent::FitnessActionCounted {
+                        player_id: self.players[player_index].id,
+                        action: command.action,
+                    });
+                }
+            }
             PlayerAction::GuardStart => {
                 self.players[player_index].guarding = true;
                 result.events.push(CombatEvent::PlayerActionAccepted {
