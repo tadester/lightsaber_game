@@ -29,8 +29,10 @@ pip install -r requirements.txt
 python mediapipe_bridge.py
 ```
 
-Then start the Rust app in another terminal:
+Then start the Rust app:
 
 ```bash
 cargo run -p lightsaber_app
 ```
+
+Choose `Python Camera` or `Keyboard + Python` in the game menu. The Rust app will start this bridge from `.venv` automatically.

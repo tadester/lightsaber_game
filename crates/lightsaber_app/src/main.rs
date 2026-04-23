@@ -177,7 +177,13 @@ impl PythonBridgeProcess {
             return false;
         };
 
-        match Command::new("python3")
+        let python = script
+            .parent()
+            .map(|bridge_dir| bridge_dir.join(".venv/bin/python"))
+            .filter(|path| path.exists())
+            .unwrap_or_else(|| "python3".into());
+
+        match Command::new(python)
             .arg(script)
             .stdin(Stdio::null())
             .stdout(Stdio::null())

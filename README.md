@@ -67,15 +67,16 @@ What you get now:
 - local 1v1 duel rules
 - UDP camera-command intake from Python
 
-## Run the Python bridge
+## Install camera dependencies once
 
 ```bash
 cd Tools/gesture_bridge
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python mediapipe_bridge.py
 ```
+
+After that, run the Rust game and choose `Python Camera` or `Keyboard + Python` in the main menu. The game will launch the bridge from `Tools/gesture_bridge/.venv` automatically.
 
 ## Browser prototype
 
